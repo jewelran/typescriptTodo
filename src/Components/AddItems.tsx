@@ -47,7 +47,7 @@ const AddItemsHandler = useCallback (() => {
 
 const itemsContainer = makeStyles({
     root: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      background: 'linear-gradient(left, #752201 0%,#bf6e4e 86%)',
       border: 0,
       borderRadius: 3,
       boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -71,23 +71,32 @@ const itemsContainer = makeStyles({
             display:"flex",
             justifyContent:"center",
             background:"orange",
-            height: 50
+            height: 50,
+            padding:15
       }
   })
-  const inptu = makeStyles ({
+  const input = makeStyles ({
+      style: {
+          width:250,
+          borderRadius:10,
+          fontSize:18,
+          marginRight:10
+      }
       
   })
   const inputMainContainer = inputContainer()
   const inputWrap = inputArea()
   const classes = itemsContainer();
+  const  inputBox = input()
+
   return (
     <div>
-            <h1>this is added items</h1>
+            <h1>ADD PRODUCT</h1>
 
             <div className="">
                       <div className = {inputMainContainer.container}>
                       <div className={inputWrap.style}>
-                       <input ref={addItemsRef} type="text" name="" id="" />
+                       <input  className={inputBox.style} ref={addItemsRef} type="text" name="" id="" />
                         <Stack direction="row" spacing={3}>
                         <Button onClick={AddItemsHandler} variant="contained">ADD ITEMS</Button>
                         </Stack>
